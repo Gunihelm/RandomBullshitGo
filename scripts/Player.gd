@@ -3,7 +3,7 @@ extends CharacterBody3D
 const Pushable = preload("res://scripts/pushable.gd")
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
-@export var power = 5
+@export var power = 3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -27,6 +27,7 @@ func _physics_process(delta):
 	face()
 	hit(0.2)
 	move_and_slide()
+	position.y= 0.482
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -37,7 +38,7 @@ func hit(height):
 	if Input.is_action_just_pressed("Action"):
 		for enemy in $Facing.get_overlapping_bodies():
 			if enemy is Pushable:
-				enemy._knockback(Vector3($Facing.get_Vec(height))*power+velocity)
+				enemy._knockback((Vector3($Facing.get_Vec(height))*power+velocity/SPEED)/enemy.mass)
 	#for enemy in $PushBox.get_overlapping_bodies():
 			#if enemy.isEnemy:
 				#var direction = enemy.get_global_position()-get_global_position()
@@ -51,12 +52,11 @@ func face():
 		$Sprite3D.frame_coords.x = 0
 	if 45 <= facing and facing < 135:
 		$Sprite3D.frame_coords.x = 2
-		$Sprite3D.flip_h = false
 	if 135 <= facing or facing < -135:
 		$Sprite3D.frame_coords.x = 1
 	if -135 <= facing and facing < -45:
-		$Sprite3D.frame_coords.x = 2
-		$Sprite3D.flip_h = true
+		$Sprite3D.frame_coords.x = 3
+		
 
 
 

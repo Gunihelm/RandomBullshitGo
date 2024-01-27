@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://csceq1vkmj2wl"]
 
-[ext_resource type="Script" path="res://scripts/pushable.gd" id="1_5ac6m"]
+[ext_resource type="Script" path="res://scripts/dummy.gd" id="1_id1o1"]
+[ext_resource type="Texture2D" uid="uid://becbysoolggd2" path="res://assets/ball.png" id="2_htw4a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8abqr"]
 friction = 0.5
@@ -10,17 +11,15 @@ bounce = 0.11
 height = 0.2
 radius = 0.1
 
-[sub_resource type="SphereMesh" id="SphereMesh_lj8pl"]
-radius = 0.1
-height = 0.2
-
 [node name="Dummy" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_8abqr")
 lock_rotation = true
-script = ExtResource("1_5ac6m")
+script = ExtResource("1_id1o1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_314bt")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_lj8pl")
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_htw4a")

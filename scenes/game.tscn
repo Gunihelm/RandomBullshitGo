@@ -58,7 +58,6 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_yufhb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bed"]
-visible = false
 mesh = SubResource("BoxMesh_ick2o")
 surface_material_override/0 = SubResource("StandardMaterial3D_5cn6g")
 
@@ -143,3 +142,9 @@ shape = SubResource("BoxShape3D_fsb7t")
 [node name="CSGBox3D" type="CSGBox3D" parent="SideWall2"]
 visible = false
 size = Vector3(1, 5, 6.5)
+
+[node name="Dummy2" parent="." instance=ExtResource("4_bfhg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457999, 0.821202)
+
+[node name="Dummy3" parent="." instance=ExtResource("4_bfhg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41078, 0.351174, -1.74303)

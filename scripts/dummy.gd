@@ -1,17 +1,27 @@
-extends RigidBody3D
-class_name Pushable
+extends Pushable
+@export var SPEED = 1.0
+var destination = Vector3.ZERO
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-func _integrate_forces(state):
-	angular_velocity = Vector3(0,0,0)
-	rotation = Vector3(0,0,0)
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
+func _physics_process(delta):
 	
 
-func _knockback(input):
-	linear_velocity += input
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	if destination == Vector3.ZERO or position.distance_to(destination) < 0.5:
+		_destination_search()
+	if linear_velocity.length() < SPEED and not stumbeled:
+		set_constant_force((destination - position).normalized()*10)
+	var direction = (destination - position).normalized()
+	#linear_velocity = (linear_velocity + direction).normalized()
+	constant_force *= 0.9
+	if linear_velocity.length()<0.01:
+		stumbeled = false
+ 
+
+
+func _destination_search():
+	destination = Vector3(randf_range(-4,4), 0, randf_range(-2.25,2.25))
+	

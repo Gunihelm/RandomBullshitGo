@@ -1,4 +1,5 @@
 class_name Pushable extends RigidBody3D
+var stumbeled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +12,7 @@ func _ready():
 
 func _knockback(input):
 	linear_velocity += input
+	stumbeled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

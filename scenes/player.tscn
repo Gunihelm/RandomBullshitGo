@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://iqhp16gxd7gn"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_f48gb"]
-[ext_resource type="Texture2D" uid="uid://1l35tgbx7t0c" path="res://assets/Enemies_Mockup2_cutout.png" id="2_t8ph6"]
+[ext_resource type="Texture2D" uid="uid://deirjuj5jggqi" path="res://assets/PlayerCharacter_V2.png" id="2_8bc7l"]
 [ext_resource type="Script" path="res://scripts/Facing.gd" id="3_skodr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_u2o2y"]
@@ -21,11 +21,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
 shape = SubResource("CylinderShape3D_u2o2y")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.0962334, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -0.0962334, 0)
 billboard = 1
 shaded = true
-texture = ExtResource("2_t8ph6")
-hframes = 3
+texture = ExtResource("2_8bc7l")
+hframes = 4
 frame = 1
 
 [node name="Facing" type="Area3D" parent="."]
