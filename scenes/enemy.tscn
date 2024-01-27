@@ -1,18 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwh4jq4bfm1ii"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_lodft"]
-[ext_resource type="Texture2D" uid="uid://b8kw35wm5lul1" path="res://assets/Player_mockup.png" id="2_t45kf"]
 
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_lodft")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-
-transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_tdbbq")
-
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-billboard = 2
-texture = ExtResource("2_t45kf")
