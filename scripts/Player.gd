@@ -34,7 +34,7 @@ func _physics_process(delta):
 			collision.get_collider().apply_central_impulse(-collision.get_normal()*SPEED/5)
 
 func hit(height):
-	if Input.is_action_just_pressed("Aktion"):
+	if Input.is_action_just_pressed("Action"):
 		for enemy in $Facing.get_overlapping_bodies():
 			if enemy is Pushable:
 				enemy._knockback(Vector3($Facing.get_Vec(height))*power+velocity)
