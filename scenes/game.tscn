@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://clcqewrfte2cx"]
+[gd_scene load_steps=19 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://ckn7e10fo6tpr" path="res://assets/Background_Main_V1.png" id="2_4rv4p"]
 [ext_resource type="PackedScene" uid="uid://vqkkxbdpjvk4" path="res://scenes/bananaDuck.tscn" id="3_njjwp"]
 [ext_resource type="PackedScene" uid="uid://cac6b166ylnde" path="res://scenes/pingweng.tscn" id="4_1wy5j"]
+[ext_resource type="Script" path="res://scripts/onPlatform.gd" id="5_y7y05"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yufhb"]
 size = Vector3(10.3, 1, 6.5)
@@ -61,7 +62,6 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_yufhb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bed"]
-visible = false
 mesh = SubResource("BoxMesh_ick2o")
 surface_material_override/0 = SubResource("StandardMaterial3D_5cn6g")
 
@@ -149,7 +149,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33464, 1.35803, -1.24626)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20898, 0.745337, 0)
 
 [node name="onPlatform" type="Area3D" parent="."]
+script = ExtResource("5_y7y05")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="onPlatform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, -1)
 shape = SubResource("BoxShape3D_mem0b")
