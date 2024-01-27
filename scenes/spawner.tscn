@@ -1,20 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckhjhdluiqoxw"]
+[gd_scene load_steps=7 format=3 uid="uid://dwqnwynjdcg3a"]
 
 [ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_davkh"]
-[ext_resource type="PackedScene" uid="uid://csceq1vkmj2wl" path="res://scenes/dummy.tscn" id="2_ojj4j"]
+[ext_resource type="PackedScene" uid="uid://cac6b166ylnde" path="res://scenes/pingweng.tscn" id="2_eh8v8"]
 [ext_resource type="Script" path="res://scripts/spawn_info.gd" id="2_uywc5"]
+[ext_resource type="PackedScene" uid="uid://dpcx3vdkhh474" path="res://scenes/spikey.tscn" id="4_qs7op"]
 
 [sub_resource type="Resource" id="Resource_f03av"]
 script = ExtResource("2_uywc5")
 time_start = 0
 time_end = 30
-enemy = ExtResource("2_ojj4j")
+enemy = ExtResource("2_eh8v8")
+enemy_max = 1
+spawn_delay = 1
+
+[sub_resource type="Resource" id="Resource_yxoho"]
+script = ExtResource("2_uywc5")
+time_start = 0
+time_end = 60
+enemy = ExtResource("4_qs7op")
 enemy_max = 1
 spawn_delay = 1
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_davkh")
-spawns = Array[ExtResource("2_uywc5")]([SubResource("Resource_f03av")])
+spawns = Array[ExtResource("2_uywc5")]([SubResource("Resource_f03av"), SubResource("Resource_yxoho")])
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
