@@ -19,7 +19,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -27,5 +27,25 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	if velocity.x < 0:
+		$Sprite3D.flip_h = true
+	if velocity.x > 0:
+		$Sprite3D.flip_h = false
+	$HitBox.look_at(ScreenPointToRay(), Vector3.UP)
 	move_and_slide()
+
+func ScreenPointToRay():
+	var spaceState = get_world_3d().direct_space_state
+	
+	var mousePos = get_viewport().get_mouse_position()
+	var camera = get_tree().root.get_camera_3d()
+	var rayOrigin = camera.project_ray_origin(mousePos)
+	var rayEnd = rayOrigin + camera.project_ray_normal(mousePos) * 2000
+	var rayArray = spaceState.intersect_ray(PhysicsRayQueryParameters3D.create(rayOrigin, rayEnd))
+	if rayArray.has("position"):
+		return rayArray["position"]
+	return Vector3()
+	
+	
+	
+	
