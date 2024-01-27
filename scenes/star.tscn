@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://4hi78x52fdc1"]
+
+[ext_resource type="Script" path="res://scripts/dummy.gd" id="1_p5ty6"]
+[ext_resource type="Texture2D" uid="uid://ymmgydiwrfvx" path="res://assets/Enemy_Star_V2.png" id="2_5k3bp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ruuc"]
+friction = 0.5
+bounce = 0.11
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q5bhx"]
+height = 0.862791
+radius = 0.363201
+
+[node name="Star" type="RigidBody3D"]
+mass = 0.32
+physics_material_override = SubResource("PhysicsMaterial_8ruuc")
+lock_rotation = true
+script = ExtResource("1_p5ty6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -0.0285919, 0.229734, 0.0142334)
+shape = SubResource("CylinderShape3D_q5bhx")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.220973, 0)
+billboard = 1
+texture = ExtResource("2_5k3bp")
+hframes = 4
+frame = 3

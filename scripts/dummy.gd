@@ -13,6 +13,7 @@ func _physics_process(delta):
 	constant_force *= 0.9
 	if linear_velocity.length()<0.01:
 		stumbeled = false
+		_destination_search()
 	if global_position.y < 0 and not isVisible():
 		queue_free()
 	if facing() != -1:
@@ -29,7 +30,7 @@ func isVisible():
 	return true
 
 func facing():
-	if linear_velocity.length() < 0.5:
+	if linear_velocity.length() < 0.25:
 		return -1
 	var dir = Vector3(linear_velocity.x,0,linear_velocity.z).normalized()
 	if dir.z < -sqrt(1.0/2.0):
