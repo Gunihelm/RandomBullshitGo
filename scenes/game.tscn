@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://hwde4d5v1iqr"]
+[gd_scene load_steps=11 format=3 uid="uid://hwde4d5v1iqr"]
 
+[ext_resource type="Script" path="res://scenes/Player.gd" id="1_ncfib"]
 [ext_resource type="Texture2D" uid="uid://b8kw35wm5lul1" path="res://assets/Player_mockup.png" id="2_cd0rc"]
+[ext_resource type="Texture2D" uid="uid://3w0huat4uac7" path="res://assets/BG_mockup.png" id="3_0w828"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_toioy"]
 radius = 0.152219
@@ -12,10 +14,25 @@ size = Vector3(20, 1, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_ick2o"]
 size = Vector3(20, 1, 10)
 
+[sub_resource type="Environment" id="Environment_ndfe1"]
+background_mode = 3
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iids3"]
+
+[sub_resource type="Sky" id="Sky_ad6d2"]
+sky_material = SubResource("ProceduralSkyMaterial_iids3")
+
+[sub_resource type="Environment" id="Environment_yve0x"]
+background_mode = 3
+background_canvas_max_layer = -1
+sky = SubResource("Sky_ad6d2")
+ambient_light_color = Color(1, 1, 1, 1)
+
 [node name="Game" type="Node3D"]
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482301, 0)
+script = ExtResource("1_ncfib")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
@@ -35,3 +52,23 @@ shape = SubResource("BoxShape3D_yufhb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("BoxMesh_ick2o")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.791949, 0.610588, 0, -0.610588, 0.791949, 0.503623, 5.99428, 8.48158)
+environment = SubResource("Environment_ndfe1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.904649, -0.331846, 0.267374, 0, 0.627406, 0.778692, -0.426158, -0.704443, 0.567582, 5.47707, 7.07352, 8.99172)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yve0x")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+follow_viewport_enabled = true
+
+[node name="Sprite3D" type="Sprite3D" parent="Background"]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, -5.86954, -9.53647)
+billboard = 1
+texture = ExtResource("3_0w828")
