@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://csceq1vkmj2wl"]
 
 [ext_resource type="Script" path="res://scripts/dummy.gd" id="1_id1o1"]
-[ext_resource type="Texture2D" uid="uid://becbysoolggd2" path="res://assets/ball.png" id="2_htw4a"]
+[ext_resource type="Texture2D" uid="uid://cosry4p1d34v8" path="res://assets/Enemy_BananaDuck_V1.png" id="2_7qopv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8abqr"]
 friction = 0.5
@@ -22,4 +22,6 @@ shape = SubResource("CylinderShape3D_314bt")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 billboard = 1
-texture = ExtResource("2_htw4a")
+texture = ExtResource("2_7qopv")
+hframes = 4
+frame = 3

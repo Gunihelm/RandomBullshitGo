@@ -3,7 +3,7 @@ extends CharacterBody3D
 const Pushable = preload("res://scripts/pushable.gd")
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
-@export var power = 3
+@export var power = 5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -33,6 +33,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is Pushable:
 			collision.get_collider().apply_central_impulse(-collision.get_normal()*SPEED/5)
+			collision.get_collider().stumbeled = true
 
 func hit(height):
 	if Input.is_action_just_pressed("Action"):

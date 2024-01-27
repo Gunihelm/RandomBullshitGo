@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://baek1f2lfujd0"]
+
+[ext_resource type="Script" path="res://scripts/dummy.gd" id="1_pyap0"]
+[ext_resource type="Texture2D" uid="uid://8503ulvpm5ws" path="res://assets/Enemy_MochiCat_V3.png" id="2_xr3yc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ruuc"]
+friction = 0.5
+bounce = 0.11
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3m2j"]
+size = Vector3(1, 1, 0.129395)
+
+[node name="mochiCat" type="RigidBody3D"]
+mass = 1.68
+physics_material_override = SubResource("PhysicsMaterial_8ruuc")
+lock_rotation = true
+script = ExtResource("1_pyap0")
+SPEED = 0.3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0.0289001)
+shape = SubResource("BoxShape3D_b3m2j")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0682653, 0)
+billboard = 1
+texture = ExtResource("2_xr3yc")
+hframes = 4
+frame = 3

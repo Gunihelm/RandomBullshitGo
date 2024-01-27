@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpcx3vdkhh474"]
+
+[ext_resource type="Script" path="res://scripts/dummy.gd" id="1_7keei"]
+[ext_resource type="Texture2D" uid="uid://cosry4p1d34v8" path="res://assets/Enemy_BananaDuck_V1.png" id="2_582gs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ruuc"]
+friction = 0.5
+bounce = 0.11
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3m2j"]
+size = Vector3(1, 1, 0.129395)
+
+[node name="spikey" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_8ruuc")
+lock_rotation = true
+script = ExtResource("1_7keei")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0.0289001)
+shape = SubResource("BoxShape3D_b3m2j")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.220973, 0)
+billboard = 1
+texture = ExtResource("2_582gs")
+hframes = 4
+frame = 3

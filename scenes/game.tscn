@@ -1,15 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://clcqewrfte2cx"]
+[gd_scene load_steps=18 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
-[ext_resource type="Texture2D" uid="uid://wl2nshittnw1" path="res://assets/Sizing.png" id="2_emdtp"]
-[ext_resource type="PackedScene" uid="uid://cwh4jq4bfm1ii" path="res://scenes/enemy.tscn" id="3_gd8yw"]
-[ext_resource type="PackedScene" uid="uid://csceq1vkmj2wl" path="res://scenes/dummy.tscn" id="4_bfhg6"]
+[ext_resource type="Texture2D" uid="uid://ckn7e10fo6tpr" path="res://assets/Background_Main_V1.png" id="2_4rv4p"]
+[ext_resource type="PackedScene" uid="uid://vqkkxbdpjvk4" path="res://scenes/bananaDuck.tscn" id="3_njjwp"]
+[ext_resource type="PackedScene" uid="uid://cac6b166ylnde" path="res://scenes/pingweng.tscn" id="4_1wy5j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yufhb"]
-size = Vector3(10, 1, 6.5)
+size = Vector3(10.3, 1, 6.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ick2o"]
-size = Vector3(10, 1, 6.5)
+size = Vector3(10.3, 1, 6.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cn6g"]
 
@@ -42,6 +42,9 @@ size = Vector3(10, 5, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fsb7t"]
 size = Vector3(1, 5, 6.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mem0b"]
+size = Vector3(10.3, 2, 6.5)
+
 [node name="Game" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_1x47k")]
@@ -50,7 +53,7 @@ collision_mask = 3
 
 [node name="Bed" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1)
-collision_layer = 5
+collision_layer = 13
 collision_mask = 5
 metadata/_edit_group_ = true
 
@@ -80,19 +83,14 @@ environment = SubResource("Environment_ndfe1")
 [node name="Sprite3D" type="Sprite3D" parent="Camera Anchor"]
 transform = Transform3D(2, 0, 0, 0, 1.37671, -1.45075, 0, 1.45075, 1.37671, 0, 0, -13.25)
 billboard = 1
-texture = ExtResource("2_emdtp")
+texture = ExtResource("2_4rv4p")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.904649, -0.331846, 0.267374, 0, 0.627406, 0.778692, -0.426158, -0.704443, 0.567582, 5.47707, 7.07352, 8.99172)
+transform = Transform3D(0.947131, 0.145, -0.286214, 0.0942213, 0.727025, 0.680115, 0.306702, -0.671125, 0.674926, 20.3573, 5.73284, -23.1276)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yve0x")
-
-[node name="Enemy" parent="." instance=ExtResource("3_gd8yw")]
-
-[node name="Dummy" parent="." instance=ExtResource("4_bfhg6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.985603, 0.261702, 0)
 
 [node name="BackWall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4.75)
@@ -143,8 +141,14 @@ shape = SubResource("BoxShape3D_fsb7t")
 visible = false
 size = Vector3(1, 5, 6.5)
 
-[node name="Dummy2" parent="." instance=ExtResource("4_bfhg6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457999, 0.821202)
+[node name="bananaDuck" parent="." instance=ExtResource("3_njjwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33464, 1.35803, -1.24626)
 
-[node name="Dummy3" parent="." instance=ExtResource("4_bfhg6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41078, 0.351174, -1.74303)
+[node name="pingweng" parent="." instance=ExtResource("4_1wy5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20898, 0.745337, 0)
+
+[node name="onPlatform" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="onPlatform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+shape = SubResource("BoxShape3D_mem0b")
