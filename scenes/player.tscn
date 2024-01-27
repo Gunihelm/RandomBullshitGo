@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://iqhp16gxd7gn"]
 
-[ext_resource type="Script" path="res://scenes/Player.gd" id="1_ui3xw"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_f48gb"]
 [ext_resource type="Texture2D" uid="uid://b8kw35wm5lul1" path="res://assets/Player_mockup.png" id="2_vxlii"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_toioy"]
@@ -12,7 +12,7 @@ radius = 0.05
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.482301, 0)
-script = ExtResource("1_ui3xw")
+script = ExtResource("1_f48gb")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
