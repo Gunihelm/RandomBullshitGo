@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://csceq1vkmj2wl"]
+[gd_scene load_steps=5 format=3 uid="uid://csceq1vkmj2wl"]
 
-[ext_resource type="Script" path="res://scripts/dummy.gd" id="1_id1o1"]
+[ext_resource type="Script" path="res://scripts/pushable.gd" id="1_5ac6m"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_vbxo5"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8abqr"]
+friction = 0.5
+bounce = 0.11
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_314bt"]
+height = 0.2
 radius = 0.1
 
 [sub_resource type="SphereMesh" id="SphereMesh_lj8pl"]
@@ -10,10 +15,12 @@ radius = 0.1
 height = 0.2
 
 [node name="Dummy" type="RigidBody3D"]
-script = ExtResource("1_id1o1")
+physics_material_override = SubResource("PhysicsMaterial_8abqr")
+lock_rotation = true
+script = ExtResource("1_5ac6m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_vbxo5")
+shape = SubResource("CylinderShape3D_314bt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_lj8pl")

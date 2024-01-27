@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-
+const Pushable = preload("res://scripts/pushable.gd")
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 @export var power = 5
@@ -10,8 +10,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	#if not is_on_floor():
+		#velocity.y -= gravity * delta
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -28,17 +28,20 @@ func _physics_process(delta):
 	hit(0.2)
 	move_and_slide()
 	
-	#for i in get_slide_collision_count():
-		#var collision = get_slide_collision(i)
-		#if collision.get_collider.isEnemy:
-			#pass
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is Pushable:
+			collision.get_collider().apply_central_impulse(-collision.get_normal()*SPEED/5)
 
 func hit(height):
 	if Input.is_action_just_pressed("Aktion"):
 		for enemy in $Facing.get_overlapping_bodies():
-			if enemy.isEnemy:
-				enemy._knockback(Vector3($Facing.get_Vec(height))*power)
-	pass
+			if enemy is Pushable:
+				enemy._knockback(Vector3($Facing.get_Vec(height))*power+velocity)
+	#for enemy in $PushBox.get_overlapping_bodies():
+			#if enemy.isEnemy:
+				#var direction = enemy.get_global_position()-get_global_position()
+				#enemy._knockback(Vector3(direction.x,0,direction.z))
 
 func face():
 	$Facing.look_at(ScreenPointToRay(), Vector3.UP)
@@ -64,7 +67,7 @@ func ScreenPointToRay():
 	var camera = get_tree().root.get_camera_3d()
 	var rayOrigin = camera.project_ray_origin(mousePos)
 	var rayEnd = rayOrigin + camera.project_ray_normal(mousePos) * 2000
-	var rayArray = spaceState.intersect_ray(PhysicsRayQueryParameters3D.create(rayOrigin, rayEnd))
+	var rayArray = spaceState.intersect_ray(PhysicsRayQueryParameters3D.create(rayOrigin, rayEnd, 0b00000000_00000000_00000000_00000100))
 	if rayArray.has("position"):
 		return rayArray["position"]
 	return Vector3()
