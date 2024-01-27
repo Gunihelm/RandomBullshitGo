@@ -28,6 +28,7 @@ hframes = 3
 frame = 1
 
 [node name="Facing" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.322397, 0)
 script = ExtResource("3_skodr")
 
 [node name="Point" type="CollisionShape3D" parent="Facing"]
