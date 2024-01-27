@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4f7s41u87idg"
+path="res://.godot/imported/disk scratch noise.wav-75bc60badd193358c035f7018e174645.sample"
+
+[deps]
+
+source_file="res://sounds/sound fx/disk scratch noise.wav"
+dest_files=["res://.godot/imported/disk scratch noise.wav-75bc60badd193358c035f7018e174645.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

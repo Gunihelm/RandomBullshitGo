@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blx2h08hy102r"
+path="res://.godot/imported/special item flute.wav-cf1b6f886d21e72ec4debb9bfaa6a3d0.sample"
+
+[deps]
+
+source_file="res://sounds/sound fx/special item flute.wav"
+dest_files=["res://.godot/imported/special item flute.wav-cf1b6f886d21e72ec4debb9bfaa6a3d0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
