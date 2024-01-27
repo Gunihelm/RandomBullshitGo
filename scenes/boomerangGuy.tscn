@@ -1,28 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpcx3vdkhh474"]
+[gd_scene load_steps=5 format=3 uid="uid://6wuimcva606y"]
 
-[ext_resource type="Script" path="res://scripts/dummy.gd" id="1_7keei"]
-[ext_resource type="Texture2D" uid="uid://cw56sop3ofq2x" path="res://assets/Enemy_Spikey_V3.png" id="2_l66q3"]
+[ext_resource type="Script" path="res://scripts/dummy.gd" id="1_6jnln"]
+[ext_resource type="Texture2D" uid="uid://w3ao8g5xsia8" path="res://assets/Enemy_BoomerarngGuy_V2.png" id="2_ti4mn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ruuc"]
 friction = 0.5
 bounce = 0.11
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b3m2j"]
-size = Vector3(1, 1, 0.261963)
+size = Vector3(1, 1, 0.381104)
 
-[node name="spikey" type="RigidBody3D"]
-mass = 1.21
+[node name="BoomerangGuy" type="RigidBody3D"]
+mass = 0.7
 physics_material_override = SubResource("PhysicsMaterial_8ruuc")
 lock_rotation = true
-script = ExtResource("1_7keei")
+script = ExtResource("1_6jnln")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.230398, -0.000927726)
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.219214, -0.0277344)
 shape = SubResource("BoxShape3D_b3m2j")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.220973, 0)
 billboard = 1
-texture = ExtResource("2_l66q3")
+texture = ExtResource("2_ti4mn")
 hframes = 4
 frame = 3
