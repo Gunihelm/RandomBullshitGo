@@ -1,7 +1,7 @@
 extends CharacterBody3D
+class_name Pushable
 
 const SPEED = 5.0
-const isEnemy = true
 var destination = Vector3.ZERO
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
