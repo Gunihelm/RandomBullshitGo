@@ -1,5 +1,4 @@
 [gd_scene load_steps=18 format=3 uid="uid://clcqewrfte2cx"]
-[gd_scene load_steps=18 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://ckn7e10fo6tpr" path="res://assets/Background_Main_V1.png" id="2_4rv4p"]
@@ -62,6 +61,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_yufhb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bed"]
+visible = false
 mesh = SubResource("BoxMesh_ick2o")
 surface_material_override/0 = SubResource("StandardMaterial3D_5cn6g")
 
