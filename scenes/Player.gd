@@ -45,7 +45,4 @@ func ScreenPointToRay():
 	if rayArray.has("position"):
 		return rayArray["position"]
 	return Vector3()
-	
-	
-	
-	
+
