@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const SPEED = 5.0
 const isEnemy = true
 
@@ -26,6 +25,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func _knockback(player_direction, player_velocity):
-	
-	
+func _knockback(player_velocity):
+	velocity += player_velocity
+	return
