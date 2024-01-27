@@ -25,6 +25,6 @@ func _physics_process(delta):
 
 	move_and_slide()
  
- func _knockback(player_velocity):
+func _knockback(player_velocity):
 	velocity += player_velocity
 	return
