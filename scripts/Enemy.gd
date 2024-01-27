@@ -27,5 +27,4 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _knockback(player_direction, player_velocity):
-	
-	
+	return
