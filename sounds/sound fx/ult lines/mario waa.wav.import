@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dsvu73x0oy4e3"
+path="res://.godot/imported/mario waa.wav-6d92629d00725e1ccff0495100f2a886.sample"
+
+[deps]
+
+source_file="res://sounds/sound fx/ult lines/mario waa.wav"
+dest_files=["res://.godot/imported/mario waa.wav-6d92629d00725e1ccff0495100f2a886.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
