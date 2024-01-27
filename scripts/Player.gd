@@ -25,7 +25,7 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	face()
-	hit(1)
+	hit(0.2)
 	move_and_slide()
 	
 	#for i in get_slide_collision_count():
