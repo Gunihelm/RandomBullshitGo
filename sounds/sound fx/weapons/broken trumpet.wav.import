@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0wheo0mchfek"
+path="res://.godot/imported/broken trumpet.wav-ebea6bdbda9a2b1b333f109520975486.sample"
+
+[deps]
+
+source_file="res://sounds/sound fx/weapons/broken trumpet.wav"
+dest_files=["res://.godot/imported/broken trumpet.wav-ebea6bdbda9a2b1b333f109520975486.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

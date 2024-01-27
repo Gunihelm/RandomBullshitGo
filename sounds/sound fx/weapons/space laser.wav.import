@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnhidc67wdlpv"
+path="res://.godot/imported/space laser.wav-e1c830dd3a5dd3d4e2b114f3872dc7f0.sample"
+
+[deps]
+
+source_file="res://sounds/sound fx/weapons/space laser.wav"
+dest_files=["res://.godot/imported/space laser.wav-e1c830dd3a5dd3d4e2b114f3872dc7f0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

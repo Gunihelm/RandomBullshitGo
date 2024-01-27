@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cp5vp6dshb0w7"
+path="res://.godot/imported/fall 1.wav-3c5be77543826ae09f28dcc2523a4993.sample"
+
+[deps]
+
+source_file="res://sounds/sound fx/falls/fall 1.wav"
+dest_files=["res://.godot/imported/fall 1.wav-3c5be77543826ae09f28dcc2523a4993.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

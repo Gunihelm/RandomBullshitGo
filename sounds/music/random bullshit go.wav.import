@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b53fw28vucknf"
+path="res://.godot/imported/random bullshit go.wav-c09afb2a75920f5bd90ef6e1d2f9514a.sample"
+
+[deps]
+
+source_file="res://sounds/music/random bullshit go.wav"
+dest_files=["res://.godot/imported/random bullshit go.wav-c09afb2a75920f5bd90ef6e1d2f9514a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

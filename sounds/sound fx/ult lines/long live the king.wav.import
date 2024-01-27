@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c36rngq4n5n18"
+path="res://.godot/imported/long live the king.wav-c50c638fc660083aabb670a71d61b400.sample"
+
+[deps]
+
+source_file="res://sounds/sound fx/ult lines/long live the king.wav"
+dest_files=["res://.godot/imported/long live the king.wav-c50c638fc660083aabb670a71d61b400.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
