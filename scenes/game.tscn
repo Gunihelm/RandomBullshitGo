@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://3w0huat4uac7" path="res://assets/BG_mockup.png" id="3_0w828"]
-[ext_resource type="PackedScene" uid="uid://yp2cy8fah1wg" path="res://scenes/enemy.tscn" id="3_gd8yw"]
+
+[ext_resource type="PackedScene" uid="uid://cwh4jq4bfm1ii" path="res://scenes/enemy.tscn" id="3_gd8yw"]
+[ext_resource type="PackedScene" uid="uid://csceq1vkmj2wl" path="res://scenes/dummy.tscn" id="4_bfhg6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yufhb"]
 size = Vector3(20, 1, 10)
