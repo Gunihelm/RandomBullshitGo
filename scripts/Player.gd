@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-
+@export var power = 10
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -12,10 +12,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -27,12 +23,34 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	if velocity.x < 0:
-		$Sprite3D.flip_h = true
-	if velocity.x > 0:
-		$Sprite3D.flip_h = false
-	$HitBox.look_at(ScreenPointToRay(), Vector3.UP)
+	
+	face()
+	hit(5)
 	move_and_slide()
+
+func hit(hight):
+	if Input.get("Aktion"):
+		for enemy in $Facing.get_overlapping_bodys:
+			if enemy.isEnemy:
+				enemy._knockback($Facing.get_Vec()*power)
+	pass
+
+func face():
+	$Facing.look_at(ScreenPointToRay(), Vector3.UP)
+	$Facing.rotation.x = 0
+	var facing = $Facing.get_rotation_degrees().y
+	if -45 <= facing and facing < 45:
+		$Sprite3D.frame_coords.x = 0
+	if 45 <= facing and facing < 135:
+		$Sprite3D.frame_coords.x = 2
+		$Sprite3D.flip_h = false
+	if 135 <= facing or facing < -135:
+		$Sprite3D.frame_coords.x = 1
+	if -135 <= facing and facing < -45:
+		$Sprite3D.frame_coords.x = 2
+		$Sprite3D.flip_h = true
+
+
 
 func ScreenPointToRay():
 	var spaceState = get_world_3d().direct_space_state
