@@ -1,7 +1,8 @@
 extends CharacterBody3D
+class_name Pushable
 
 const SPEED = 5.0
-const isEnemy = true
+var destination = Vector3.ZERO
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -12,19 +13,17 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
+	if destination == Vector3.ZERO or position.distance_to(destination):
+		_destination_search()
+	_move_to(delta)
  
 func _knockback(player_velocity):
 	velocity += player_velocity
 	return
+
+func _destination_search():
+	destination = position + Vector3(randf_range(-10,10), 0, randf_range(-10,10))
+	
+func _move_to(delta):
+	var direction = (destination - position).normalized()
+	translate(direction * SPEED * delta)
