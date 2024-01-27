@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://clcqewrfte2cx"]
+[gd_scene load_steps=18 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://wl2nshittnw1" path="res://assets/Sizing.png" id="2_emdtp"]
 [ext_resource type="PackedScene" uid="uid://cwh4jq4bfm1ii" path="res://scenes/enemy.tscn" id="3_gd8yw"]
 [ext_resource type="PackedScene" uid="uid://csceq1vkmj2wl" path="res://scenes/dummy.tscn" id="4_bfhg6"]
+[ext_resource type="PackedScene" uid="uid://dwqnwynjdcg3a" path="res://scenes/spawner.tscn" id="5_ufa0g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yufhb"]
 size = Vector3(10, 1, 6.5)
@@ -148,3 +149,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457999, 0.821202)
 
 [node name="Dummy3" parent="." instance=ExtResource("4_bfhg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41078, 0.351174, -1.74303)
+
+[node name="Spawner" parent="." instance=ExtResource("5_ufa0g")]
