@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b87v13msv5gmg"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_d60f2"]
+[ext_resource type="PackedScene" uid="uid://dj3sfn5mg6ld7" path="res://scenes/pump.tscn" id="2_eknph"]
+[ext_resource type="Texture2D" uid="uid://cq5s51gc5lv1k" path="res://assets/Weapons_BikePump_V1.png" id="2_gw62j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ywhr"]
+
+[node name="pumpItem" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_d60f2")
+weapon = ExtResource("2_eknph")
+
+[node name="collect" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collect"]
+shape = SubResource("BoxShape3D_7ywhr")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("2_gw62j")
+hframes = 2

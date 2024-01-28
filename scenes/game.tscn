@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://clcqewrfte2cx"]
+[gd_scene load_steps=31 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://ckn7e10fo6tpr" path="res://assets/Background_Main_V1.png" id="2_4rv4p"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dwqnwynjdcg3a" path="res://scenes/spawner.tscn" id="11_yjy60"]
 [ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="12_javd3"]
 [ext_resource type="Script" path="res://scripts/itemSpawner.gd" id="13_lftkk"]
-[ext_resource type="PackedScene" path="res://scenes/trumpetItem.tscn" id="14_rymrf"]
-[ext_resource type="PackedScene" path="res://scenes/baloonItem.tscn" id="15_oge77"]
+[ext_resource type="PackedScene" uid="uid://ds13jglbli07p" path="res://scenes/trumpetItem.tscn" id="14_rymrf"]
+[ext_resource type="PackedScene" uid="uid://c5xi1q36xqd0t" path="res://scenes/baloonItem.tscn" id="15_oge77"]
+[ext_resource type="PackedScene" uid="uid://dr3tloisbj0ha" path="res://scenes/hammerItem.tscn" id="16_t5nca"]
+[ext_resource type="PackedScene" uid="uid://b87v13msv5gmg" path="res://scenes/pumpItem.tscn" id="17_tlvwe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yufhb"]
 size = Vector3(10.3, 1, 6.5)
@@ -165,7 +167,7 @@ unique_name_in_owner = true
 
 [node name="itemSpawner" type="Node3D" parent="."]
 script = ExtResource("13_lftkk")
-items = Array[PackedScene]([null, ExtResource("14_rymrf"), ExtResource("15_oge77")])
+items = Array[PackedScene]([null, ExtResource("14_rymrf"), ExtResource("15_oge77"), ExtResource("16_t5nca"), ExtResource("17_tlvwe")])
 
 [node name="Timer" type="Timer" parent="itemSpawner"]
 wait_time = 3.0
