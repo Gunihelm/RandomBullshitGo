@@ -12,8 +12,8 @@ func _process(delta):
 
 
 func _on_texture_button_pressed():
-	if get_node("/root/Game/Player").kichHight > 0:
-		get_node("/root/Game/Player").kichHight -= 0.05
+	if get_node("/root/Game/Player").kickHeight > 0:
+		get_node("/root/Game/Player").kickHeight -= 0.05
 	
 	
 	get_tree().paused = false
