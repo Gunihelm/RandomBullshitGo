@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj3sfn5mg6ld7"]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_78gfk"]
+[ext_resource type="Texture2D" uid="uid://cq5s51gc5lv1k" path="res://assets/Weapons_BikePump_V1.png" id="2_c2tw2"]
+[ext_resource type="AudioStream" uid="uid://c7xbwfnujrsa5" path="res://sounds/sound fx/weapons/bicycle pump.wav" id="3_kw3s2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ldu0v"]
+height = 1.37176
+radius = 0.047022
+
+[node name="pump" type="Node3D"]
+script = ExtResource("1_78gfk")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.876336)
+shape = SubResource("CylinderShape3D_ldu0v")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2, -0.3)
+billboard = 1
+texture = ExtResource("2_c2tw2")
+hframes = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kw3s2")
