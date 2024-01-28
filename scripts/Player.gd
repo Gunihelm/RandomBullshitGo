@@ -5,6 +5,7 @@ const Pushable = preload("res://scripts/pushable.gd")
 @export var power = 5
 @export var itemUses = 1
 @export var itemCdr = 0
+@export var itemSpawnChance = 0.1
 @export var size = 0
 @export var range = 0
 @export var kickHeight = 0.2
@@ -16,6 +17,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		%Spawner.on_wave_end()
+	
+	
 	scale = Vector3(pow(1.1,size),pow(1.1,size),pow(1.1,size))
 
 	# Get the input direction and handle the movement/deceleration.

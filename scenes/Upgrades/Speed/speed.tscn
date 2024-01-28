@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://d1lyhraw7yeg8" path="res://fonts/upgrade_theme.tres" id="3_smmjj"]
 
 [node name="Speed" type="BoxContainer"]
+process_mode = 3
 offset_right = 251.0
 offset_bottom = 360.0
 script = ExtResource("1_w5qu8")

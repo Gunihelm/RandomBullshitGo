@@ -7,6 +7,7 @@ process_mode = 3
 script = ExtResource("1_7wi6g")
 
 [node name="Deck" type="HBoxContainer" parent="."]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

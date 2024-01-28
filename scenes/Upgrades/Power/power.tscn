@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://t5hqhl6i73wj"]
 
-[ext_resource type="Script" path="res://scenes/Upgrades/Speed/speed.gd" id="1_hcl34"]
+[ext_resource type="Script" path="res://scenes/Upgrades/Power/power.gd" id="1_bt07a"]
 [ext_resource type="Texture2D" uid="uid://nhht4fvf6xhn" path="res://assets/Dream_Bubble_Mockup_V0.png" id="2_nw6wc"]
 [ext_resource type="Theme" uid="uid://d1lyhraw7yeg8" path="res://fonts/upgrade_theme.tres" id="3_svgnr"]
 
-[node name="Power" type="BoxContainer"]
+[node name="power" type="BoxContainer"]
+process_mode = 3
 offset_right = 251.0
 offset_bottom = 360.0
-script = ExtResource("1_hcl34")
+script = ExtResource("1_bt07a")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 texture_filter = 1

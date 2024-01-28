@@ -12,7 +12,8 @@ func _process(delta):
 
 
 func _on_texture_button_pressed():
-	%Player.power += 0.5
+	if %Player.kichHight > 0:
+		%Player.kichHight -= 0.05
 	
 	
 	get_tree().paused = false

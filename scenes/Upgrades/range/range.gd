@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_texture_button_pressed():
-	%Player.power += 0.5
+	%Player.range += 1
 	
 	
 	get_tree().paused = false
