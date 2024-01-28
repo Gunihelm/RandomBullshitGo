@@ -14,5 +14,5 @@ func _process(delta):
 func _on_texture_button_pressed():
 	get_node("/root/Game/Player").enemyHelium += 0.05
 	get_tree().paused = false
-	get_parent().queue_free()
+	get_parent().get_parent().get_parent().queue_free()
 	

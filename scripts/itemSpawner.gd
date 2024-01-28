@@ -16,7 +16,7 @@ func _on_timer_timeout():
 		pass
 	else:
 		var item
-		if %Spawner.wave == 5:
+		if %Spawner.wave == -1:
 			item = items[0].instantiate()
 		else:
 			item = items[randi_range(1,items.size()-1)].instantiate()

@@ -13,5 +13,5 @@ func _process(delta):
 func _on_texture_button_pressed():
 	get_node("/root/Game/Player").speed *= 1.1
 	get_tree().paused = false
-	get_parent().queue_free()
+	get_parent().get_parent().get_parent().queue_free()
 	

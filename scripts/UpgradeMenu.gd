@@ -14,12 +14,15 @@ load("res://scenes/Upgrades/kichHightAdd/kichHightAdd.tscn"),
 load("res://scenes/Upgrades/kichHightSub/kichHightSub.tscn"),
 load("res://scenes/Upgrades/enemyHelium/enemyHelium.tscn"),
 load("res://scenes/Upgrades/itemPower/itemPower.tscn")]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = true
-	
+	Deck.scale.x = 5
+	Deck.scale.y = 5
 	Deck.add_child(Cards[ randi() % Cards.size() ].instantiate())
 	Deck.add_child(Cards[ randi() % Cards.size() ].instantiate())
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

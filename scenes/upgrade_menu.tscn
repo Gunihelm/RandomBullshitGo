@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3lsxbq2vhggv"]
+[gd_scene load_steps=3 format=3 uid="uid://d3lsxbq2vhggv"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeMenu.gd" id="1_7wi6g"]
+[ext_resource type="Texture2D" uid="uid://sc25pnt0ycip" path="res://assets/Upgrade_Screen.png" id="2_konkb"]
 
 [node name="UpgradeMenu" type="CanvasLayer"]
 process_mode = 3
@@ -22,3 +23,10 @@ grow_vertical = 2
 [node name="Deck" type="HBoxContainer" parent="CenterContainer"]
 process_mode = 3
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -100
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_konkb")

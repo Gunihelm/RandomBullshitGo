@@ -11,12 +11,21 @@ const Pushable = preload("res://scripts/pushable.gd")
 @export var kickHeight = 0.2
 @export var enemyHelium = 0
 @export var itemPower = 6
+var ulti = 1200
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _physics_process(delta):
+	if ulti > 0:
+		ulti -=1
+	else:
+		if Input.is_action_just_pressed("rbg"):
+			
+			$rbg.play()
+			$rbgSprite.visible = true
+			
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 	
@@ -88,3 +97,13 @@ func ScreenPointToRay():
 	return Vector3()
 
 
+
+
+func _on_rbg_finished():
+	ulti = 1200
+	$rbgSprite.visible = false
+	for enemy in $Area3D.get_overlapping_bodies():
+			if enemy is Pushable:
+				enemy._knockback(Vector3(0,2,20))
+
+	

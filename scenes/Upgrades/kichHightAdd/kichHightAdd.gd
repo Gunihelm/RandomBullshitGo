@@ -16,5 +16,5 @@ func _on_texture_button_pressed():
 	
 	
 	get_tree().paused = false
-	get_parent().queue_free()
+	get_parent().get_parent().get_parent().queue_free()
 	

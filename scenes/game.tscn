@@ -176,6 +176,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("11_unw4v")
 autoplay = true
 script = ExtResource("12_pljm3")

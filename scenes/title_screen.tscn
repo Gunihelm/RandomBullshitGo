@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyu4m8khsis6x"]
+[gd_scene load_steps=8 format=3 uid="uid://dyu4m8khsis6x"]
 
 [ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_r8sbu"]
 [ext_resource type="Texture2D" uid="uid://de7l2e165chsp" path="res://assets/Titlescreen_Background.png" id="2_rowgf"]
 [ext_resource type="Texture2D" uid="uid://sbfl3dq26lgb" path="res://assets/Titlescreen_Title.png" id="3_vf5av"]
 [ext_resource type="Texture2D" uid="uid://bxh5t1kpppgxp" path="res://assets/Titlescreen_Start-button.png" id="4_j68hs"]
 [ext_resource type="Texture2D" uid="uid://bjrcg2ye080l0" path="res://assets/Titlescreen_Foreground.png" id="5_p6nnl"]
+[ext_resource type="AudioStream" uid="uid://tf740eb8aedj" path="res://sounds/music/menu theme.wav" id="6_qi56c"]
+[ext_resource type="Script" path="res://scripts/AudioStreamPlayer.gd" id="7_3pqvw"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -41,5 +43,10 @@ layout_mode = 0
 offset_right = 2560.0
 offset_bottom = 1440.0
 texture_normal = ExtResource("4_j68hs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qi56c")
+autoplay = true
+script = ExtResource("7_3pqvw")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
