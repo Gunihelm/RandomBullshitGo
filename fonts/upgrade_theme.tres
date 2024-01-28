@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://d1lyhraw7yeg8"]
 
-[ext_resource type="FontFile" uid="uid://pfjb2t1qjdvm" path="res://fonts/velvet-dream/Velvet Dream.ttf" id="1_htpel"]
+[ext_resource type="FontFile" uid="uid://dvapuxse5r8du" path="res://fonts/sekate/Sekate.ttf" id="1_ujro8"]
 
 [resource]
-default_font = ExtResource("1_htpel")
-default_font_size = 60
+default_font = ExtResource("1_ujro8")
+default_font_size = 20
 /colors/black = Color(0, 0, 0, 1)
 Label/colors/font_color = Color(0, 0, 0, 1)

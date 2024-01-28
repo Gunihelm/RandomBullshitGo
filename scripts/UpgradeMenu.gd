@@ -20,7 +20,6 @@ func _ready():
 	
 	Deck.add_child(Cards[ randi() % Cards.size() ].instantiate())
 	Deck.add_child(Cards[ randi() % Cards.size() ].instantiate())
-	Deck.add_child(Cards[0].instantiate())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -10,7 +10,7 @@ const Pushable = preload("res://scripts/pushable.gd")
 @export var range = 0
 @export var kickHeight = 0.2
 @export var enemyHelium = 0
-@export var itemPower = 0
+@export var itemPower = 6
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -71,6 +71,8 @@ func face():
 func getFaceDeg():
 	return $Facing.get_rotation_degrees().y
 
+func getFaceVec():
+	return $Facing.get_Vec(0)
 
 func ScreenPointToRay():
 	var spaceState = get_world_3d().direct_space_state
