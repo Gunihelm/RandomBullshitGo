@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc2qun0uofs4f"]
+[gd_scene load_steps=5 format=3 uid="uid://bc2qun0uofs4f"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_imfa6"]
-[ext_resource type="Texture2D" uid="uid://djqp6ogl6jp8h" path="res://assets/healthbar_nowhite.png" id="2_2woet"]
+[ext_resource type="Texture2D" uid="uid://3gf0be6jbqgm" path="res://assets/ui_healthbar.png" id="2_7j7dr"]
+[ext_resource type="Texture2D" uid="uid://c748ugv10olir" path="res://assets/ui_backdrop.png" id="2_xs36m"]
 [ext_resource type="Texture2D" uid="uid://dieux8wau6vdn" path="res://assets/ui_colorfillBar.png" id="3_h5a1w"]
 
 [node name="ui" type="Control"]
@@ -30,5 +31,6 @@ layout_direction = 1
 layout_mode = 2
 max_value = 30.0
 value = 30.0
-texture_over = ExtResource("2_2woet")
+texture_under = ExtResource("2_xs36m")
+texture_over = ExtResource("2_7j7dr")
 texture_progress = ExtResource("3_h5a1w")

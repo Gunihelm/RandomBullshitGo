@@ -1,53 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyu4m8khsis6x"]
+[gd_scene load_steps=6 format=3 uid="uid://dyu4m8khsis6x"]
 
 [ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_r8sbu"]
-[ext_resource type="Texture2D" uid="uid://bmf6542tv46u" path="res://assets/Pillow_Background_ideas.png" id="2_708bs"]
+[ext_resource type="Texture2D" uid="uid://de7l2e165chsp" path="res://assets/Titlescreen_Background.png" id="2_rowgf"]
+[ext_resource type="Texture2D" uid="uid://sbfl3dq26lgb" path="res://assets/Titlescreen_Title.png" id="3_vf5av"]
+[ext_resource type="Texture2D" uid="uid://bxh5t1kpppgxp" path="res://assets/Titlescreen_Start-button.png" id="4_j68hs"]
+[ext_resource type="Texture2D" uid="uid://bjrcg2ye080l0" path="res://assets/Titlescreen_Foreground.png" id="5_p6nnl"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1408.0
+offset_bottom = 792.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r8sbu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_708bs")
-expand_mode = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_rowgf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.365451
-anchor_top = 0.299383
-anchor_right = 0.598958
-anchor_bottom = 0.637346
-offset_right = 2.28882e-05
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Titel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+texture = ExtResource("3_vf5av")
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Play"
+[node name="Forground" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+texture = ExtResource("5_p6nnl")
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+[node name="StartButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+texture_normal = ExtResource("4_j68hs")
 
-[node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Options"
-
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
