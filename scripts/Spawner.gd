@@ -34,6 +34,7 @@ func _spawn():
 				total_spawned += 1
 
 func on_wave_end():
+	total_spawned = 0
 	var upgrade = upgrade_menu.instantiate()
 	wave += 1
 	wave_start(wave)
