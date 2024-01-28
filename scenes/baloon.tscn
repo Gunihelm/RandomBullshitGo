@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://crn2jqpbyuqyn"]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_enfsa"]
+[ext_resource type="Texture2D" uid="uid://coyve2j72tt73" path="res://assets/Weapons_Balloon_V1.png" id="2_2otf1"]
+[ext_resource type="AudioStream" uid="uid://b30moca0of4fo" path="res://sounds/sound fx/weapons/fart balloon.wav" id="3_bhtwo"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ldu0v"]
+height = 0.467721
+radius = 0.559527
+
+[node name="baloon" type="Node3D"]
+script = ExtResource("1_enfsa")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.518971)
+shape = SubResource("CylinderShape3D_ldu0v")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2, -0.3)
+billboard = 1
+texture = ExtResource("2_2otf1")
+hframes = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bhtwo")
