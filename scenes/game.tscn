@@ -1,10 +1,12 @@
-[gd_scene load_steps=31 format=3 uid="uid://clcqewrfte2cx"]
+[gd_scene load_steps=26 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://ckn7e10fo6tpr" path="res://assets/Background_Main_V1.png" id="2_4rv4p"]
 [ext_resource type="Script" path="res://scripts/onPlatform.gd" id="5_y7y05"]
-[ext_resource type="PackedScene" uid="uid://dwqnwynjdcg3a" path="res://scenes/spawner.tscn" id="11_yjy60"]
-[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="12_javd3"]
+[ext_resource type="AudioStream" uid="uid://b53fw28vucknf" path="res://sounds/music/random bullshit go.wav" id="11_unw4v"]
+[ext_resource type="PackedScene" uid="uid://ckhjhdluiqoxw" path="res://scenes/spawner.tscn" id="11_yjy60"]
+[ext_resource type="PackedScene" uid="uid://bc2qun0uofs4f" path="res://scenes/ui.tscn" id="12_javd3"]
+[ext_resource type="Script" path="res://scripts/AudioStreamPlayer.gd" id="12_pljm3"]
 [ext_resource type="Script" path="res://scripts/itemSpawner.gd" id="13_lftkk"]
 [ext_resource type="PackedScene" uid="uid://ds13jglbli07p" path="res://scenes/trumpetItem.tscn" id="14_rymrf"]
 [ext_resource type="PackedScene" uid="uid://c5xi1q36xqd0t" path="res://scenes/baloonItem.tscn" id="15_oge77"]
@@ -173,4 +175,10 @@ items = Array[PackedScene]([null, ExtResource("14_rymrf"), ExtResource("15_oge77
 wait_time = 3.0
 autostart = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_unw4v")
+autoplay = true
+script = ExtResource("12_pljm3")
+
 [connection signal="timeout" from="itemSpawner/Timer" to="itemSpawner" method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]

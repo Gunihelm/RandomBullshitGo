@@ -17,8 +17,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		%Spawner.on_wave_end()
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 	
 	
 	scale = Vector3(pow(1.1,size),pow(1.1,size),pow(1.1,size))
@@ -46,14 +46,15 @@ func _physics_process(delta):
 			collision.get_collider().stumbeled = true
 
 func hit(height):
+	for node in get_children():
+					if node.has_method("destroy"):
+						return
 	if Input.is_action_just_pressed("Action"):
+		$AudioStreamPlayer.play()
 		for enemy in $Facing.get_overlapping_bodies():
 			if enemy is Pushable:
 				enemy._knockback((Vector3($Facing.get_Vec(height))*power+velocity/speed)/enemy.mass)
-	#for enemy in $PushBox.get_overlapping_bodies():
-			#if enemy.isEnemy:
-				#var direction = enemy.get_global_position()-get_global_position()
-				#enemy._knockback(Vector3(direction.x,0,direction.z))
+				
 
 func face():
 	$Facing.look_at(ScreenPointToRay(), Vector3.UP)

@@ -40,3 +40,5 @@ shape = SubResource("SphereShape3D_f0tp2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
 visible = false
 radius = 0.05
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
