@@ -1,15 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://clcqewrfte2cx"]
+[gd_scene load_steps=19 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://ckn7e10fo6tpr" path="res://assets/Background_Main_V1.png" id="2_4rv4p"]
-[ext_resource type="PackedScene" uid="uid://vqkkxbdpjvk4" path="res://scenes/bananaDuck.tscn" id="3_njjwp"]
-[ext_resource type="PackedScene" uid="uid://cac6b166ylnde" path="res://scenes/pingweng.tscn" id="4_1wy5j"]
-[ext_resource type="PackedScene" uid="uid://baek1f2lfujd0" path="res://scenes/mochiCat.tscn" id="5_aurug"]
 [ext_resource type="Script" path="res://scripts/onPlatform.gd" id="5_y7y05"]
-[ext_resource type="PackedScene" uid="uid://dpcx3vdkhh474" path="res://scenes/spikey.tscn" id="6_j5i4b"]
-[ext_resource type="PackedScene" path="res://scenes/boomerangGuy.tscn" id="7_5loia"]
-[ext_resource type="PackedScene" path="res://scenes/star.tscn" id="8_8xmoy"]
-[ext_resource type="PackedScene" path="res://scenes/stronkApple.tscn" id="9_braqo"]
 [ext_resource type="PackedScene" uid="uid://dwqnwynjdcg3a" path="res://scenes/spawner.tscn" id="11_yjy60"]
 [ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="12_javd3"]
 
@@ -152,12 +145,6 @@ shape = SubResource("BoxShape3D_fsb7t")
 visible = false
 size = Vector3(1, 5, 6.5)
 
-[node name="bananaDuck" parent="." instance=ExtResource("3_njjwp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33464, 1.35803, -1.24626)
-
-[node name="pingweng" parent="." instance=ExtResource("4_1wy5j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20898, 0.745337, 0)
-
 [node name="onPlatform" type="Area3D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_y7y05")
@@ -165,21 +152,6 @@ script = ExtResource("5_y7y05")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="onPlatform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, -1)
 shape = SubResource("BoxShape3D_mem0b")
-
-[node name="mochiCat" parent="." instance=ExtResource("5_aurug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337399, 1.42334)
-
-[node name="spikey" parent="." instance=ExtResource("6_j5i4b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2953, 0.53024, 0)
-
-[node name="BoomerangGuy" parent="." instance=ExtResource("7_5loia")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47836, 0.509491, 0)
-
-[node name="Star" parent="." instance=ExtResource("8_8xmoy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576421, -1.9175)
-
-[node name="StronkApple" parent="." instance=ExtResource("9_braqo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41553, 0.340859, 0.447523)
 
 [node name="Spawner" parent="." instance=ExtResource("11_yjy60")]
 
