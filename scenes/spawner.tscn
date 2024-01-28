@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwqnwynjdcg3a"]
+[gd_scene load_steps=8 format=3 uid="uid://ckhjhdluiqoxw"]
 
 [ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_davkh"]
 [ext_resource type="PackedScene" uid="uid://cac6b166ylnde" path="res://scenes/pingweng.tscn" id="2_eh8v8"]
+[ext_resource type="PackedScene" uid="uid://d3lsxbq2vhggv" path="res://scenes/upgrade_menu.tscn" id="2_lqaj2"]
 [ext_resource type="Script" path="res://scripts/spawn_info.gd" id="2_uywc5"]
 [ext_resource type="PackedScene" uid="uid://dpcx3vdkhh474" path="res://scenes/spikey.tscn" id="4_qs7op"]
 
@@ -23,6 +24,7 @@ spawn_delay = 1
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_davkh")
+upgrade_menu = ExtResource("2_lqaj2")
 spawns = Array[ExtResource("2_uywc5")]([SubResource("Resource_f03av"), SubResource("Resource_yxoho")])
 
 [node name="Timer" type="Timer" parent="."]

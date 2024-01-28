@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd3nbm3jedhdf"]
+
+[ext_resource type="Script" path="res://scenes/Upgrades/Speed/speed.gd" id="1_w5qu8"]
+[ext_resource type="Texture2D" uid="uid://nhht4fvf6xhn" path="res://assets/Dream_Bubble_Mockup_V0.png" id="2_oxfjv"]
+[ext_resource type="Theme" uid="uid://d1lyhraw7yeg8" path="res://fonts/upgrade_theme.tres" id="3_smmjj"]
+
+[node name="Speed" type="BoxContainer"]
+offset_right = 251.0
+offset_bottom = 360.0
+script = ExtResource("1_w5qu8")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("2_oxfjv")
+
+[node name="Titel" type="Label" parent="TextureButton"]
+layout_mode = 2
+offset_left = 63.0
+offset_top = 123.0
+offset_right = 185.0
+offset_bottom = 187.0
+theme = ExtResource("3_smmjj")
+text = "Speed"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
