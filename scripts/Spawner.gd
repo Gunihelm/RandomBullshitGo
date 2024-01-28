@@ -20,4 +20,3 @@ func _on_timer_timeout():
 					spawn_enemy.position = Vector3(randf_range(-5,5), 0, randf_range(-3.5,3.5))
 					add_child(spawn_enemy)
 					counter += 1
-
