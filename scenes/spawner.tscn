@@ -1,37 +1,76 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwqnwynjdcg3a"]
+[gd_scene load_steps=18 format=3 uid="uid://ckhjhdluiqoxw"]
 
 [ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_davkh"]
-[ext_resource type="PackedScene" path="res://scenes/pingweng.tscn" id="2_eh8v8"]
-[ext_resource type="PackedScene" path="res://scenes/upgrade_menu.tscn" id="2_lqaj2"]
+[ext_resource type="PackedScene" uid="uid://cac6b166ylnde" path="res://scenes/pingweng.tscn" id="2_eh8v8"]
+[ext_resource type="PackedScene" uid="uid://d3lsxbq2vhggv" path="res://scenes/upgrade_menu.tscn" id="2_lqaj2"]
 [ext_resource type="Script" path="res://scripts/spawn_info.gd" id="2_uywc5"]
 [ext_resource type="PackedScene" uid="uid://vqkkxbdpjvk4" path="res://scenes/bananaDuck.tscn" id="3_dw8t7"]
+[ext_resource type="PackedScene" uid="uid://dpcx3vdkhh474" path="res://scenes/spikey.tscn" id="4_qs7op"]
 [ext_resource type="PackedScene" uid="uid://baek1f2lfujd0" path="res://scenes/mochiCat.tscn" id="6_pyyao"]
+[ext_resource type="PackedScene" uid="uid://6wuimcva606y" path="res://scenes/boomerangGuy.tscn" id="7_k08p6"]
+[ext_resource type="PackedScene" uid="uid://4hi78x52fdc1" path="res://scenes/star.tscn" id="9_l6u6s"]
+[ext_resource type="PackedScene" uid="uid://804w6eilyc5l" path="res://scenes/stronkApple.tscn" id="10_hakja"]
 
 [sub_resource type="Resource" id="Resource_3gk1q"]
 script = ExtResource("2_uywc5")
 time_start = 2.08165e-12
-time_end = 0.0
+time_end = 0
 enemy = ExtResource("3_dw8t7")
-spawn_delay = 3.3
+enemy_max = 0
+spawn_delay = 1
 
 [sub_resource type="Resource" id="Resource_g724v"]
 script = ExtResource("2_uywc5")
-time_start = 0.0
-time_end = 0.0
+time_start = 0
+time_end = 0
 enemy = ExtResource("2_eh8v8")
-spawn_delay = 2.7
+enemy_max = 0
+spawn_delay = 1
 
 [sub_resource type="Resource" id="Resource_1lqqn"]
 script = ExtResource("2_uywc5")
-time_start = 0.0
-time_end = 0.0
+time_start = 0
+time_end = 0
 enemy = ExtResource("6_pyyao")
-spawn_delay = 3.1
+enemy_max = 0
+spawn_delay = 1
+
+[sub_resource type="Resource" id="Resource_b0ap3"]
+script = ExtResource("2_uywc5")
+time_start = 0
+time_end = 0
+enemy = ExtResource("7_k08p6")
+enemy_max = 0
+spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_cp36n"]
+script = ExtResource("2_uywc5")
+time_start = 0
+time_end = 0
+enemy = ExtResource("4_qs7op")
+enemy_max = 0
+spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_nq3cd"]
+script = ExtResource("2_uywc5")
+time_start = 0
+time_end = 0
+enemy = ExtResource("9_l6u6s")
+enemy_max = 0
+spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_yjpei"]
+script = ExtResource("2_uywc5")
+time_start = 0
+time_end = 0
+enemy = ExtResource("10_hakja")
+enemy_max = 0
+spawn_delay = 0
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_davkh")
 upgrade_menu = ExtResource("2_lqaj2")
-spawns = Array[ExtResource("2_uywc5")]([SubResource("Resource_3gk1q"), SubResource("Resource_g724v"), SubResource("Resource_1lqqn")])
+spawns = Array[ExtResource("2_uywc5")]([SubResource("Resource_3gk1q"), SubResource("Resource_g724v"), SubResource("Resource_1lqqn"), SubResource("Resource_b0ap3"), SubResource("Resource_cp36n"), SubResource("Resource_nq3cd"), SubResource("Resource_yjpei")])
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

@@ -23,6 +23,6 @@ offset_right = 185.0
 offset_bottom = 187.0
 theme = ExtResource("3_wjvw8")
 text = "Item CDR"
-horizontal_alignment = 1
+horizontal_alignment = 2
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

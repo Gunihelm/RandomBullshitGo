@@ -20,7 +20,8 @@ func _spawn():
 	for i in enemy_spawns:
 		var new_enemy = load(str(i.enemy.resource_path))
 		var spawn_enemy = new_enemy.instantiate()
-		spawn_enemy.position = Vector3(randf_range(-5,5), 0, randf_range(-3.5,3))
+		spawn_enemy.position = Vector3(randf_range(-4,4), 0, randf_range(-2.5,2.5)-1)
+		spawn_enemy.mass *= pow(1.02,wave)
 		spawn_enemy.mass *= pow(0.95,%Player.enemyHelium)
 		add_child(spawn_enemy)
 		total_spawned += 1
