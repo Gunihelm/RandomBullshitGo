@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds13jglbli07p"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_q0ci8"]
+[ext_resource type="PackedScene" uid="uid://bdmiaetcfoqye" path="res://scenes/trumpet.tscn" id="2_8wsmm"]
+[ext_resource type="Texture2D" uid="uid://c517why6sxjva" path="res://assets/Weapons_Trumpet_V1.png" id="2_tfgxe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ywhr"]
+
+[node name="trumpetItem" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_q0ci8")
+weapon = ExtResource("2_8wsmm")
+
+[node name="collect" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collect"]
+shape = SubResource("BoxShape3D_7ywhr")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("2_tfgxe")

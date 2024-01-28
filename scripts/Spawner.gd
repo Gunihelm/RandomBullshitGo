@@ -34,10 +34,10 @@ func _spawn():
 				total_spawned += 1
 
 func on_wave_end():
-	total_spawned = 0
-	wave += 1
 	var upgrade = upgrade_menu.instantiate()
-	add_child(upgrade)
+	wave += 1
+	wave_start(wave)
+	get_parent().add_child(upgrade)
 
 func wave_start(wave: int):
 	pass

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdmiaetcfoqye"]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_q2mvl"]
+[ext_resource type="Texture2D" uid="uid://c517why6sxjva" path="res://assets/Weapons_Trumpet_V1.png" id="2_5wpai"]
+[ext_resource type="AudioStream" uid="uid://c0wheo0mchfek" path="res://sounds/sound fx/weapons/broken trumpet.wav" id="3_ywtme"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ldu0v"]
+height = 1.20518
+radius = 0.344336
+
+[node name="Trumpet" type="Node3D"]
+script = ExtResource("1_q2mvl")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1.07635)
+shape = SubResource("CylinderShape3D_ldu0v")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2, -0.3)
+billboard = 1
+texture = ExtResource("2_5wpai")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ywtme")

@@ -1,10 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://clcqewrfte2cx"]
+[gd_scene load_steps=29 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://ckn7e10fo6tpr" path="res://assets/Background_Main_V1.png" id="2_4rv4p"]
 [ext_resource type="Script" path="res://scripts/onPlatform.gd" id="5_y7y05"]
 [ext_resource type="PackedScene" uid="uid://dwqnwynjdcg3a" path="res://scenes/spawner.tscn" id="11_yjy60"]
 [ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="12_javd3"]
+[ext_resource type="PackedScene" uid="uid://dpcx3vdkhh474" path="res://scenes/spikey.tscn" id="6_j5i4b"]
+[ext_resource type="PackedScene" uid="uid://6wuimcva606y" path="res://scenes/boomerangGuy.tscn" id="7_5loia"]
+[ext_resource type="PackedScene" uid="uid://4hi78x52fdc1" path="res://scenes/star.tscn" id="8_8xmoy"]
+[ext_resource type="PackedScene" uid="uid://804w6eilyc5l" path="res://scenes/stronkApple.tscn" id="9_braqo"]
+[ext_resource type="PackedScene" uid="uid://ckhjhdluiqoxw" path="res://scenes/spawner.tscn" id="11_yjy60"]
+[ext_resource type="PackedScene" uid="uid://bc2qun0uofs4f" path="res://scenes/ui.tscn" id="12_javd3"]
+[ext_resource type="Script" path="res://scripts/itemSpawner.gd" id="13_lftkk"]
+[ext_resource type="PackedScene" uid="uid://ds13jglbli07p" path="res://scenes/trumpetItem.tscn" id="14_rymrf"]
+[ext_resource type="PackedScene" uid="uid://c5xi1q36xqd0t" path="res://scenes/baloonItem.tscn" id="15_oge77"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yufhb"]
 size = Vector3(10.3, 1, 6.5)
@@ -53,6 +62,7 @@ size = Vector3(10.3, 2, 6.5)
 unique_name_in_owner = true
 collision_layer = 3
 collision_mask = 3
+itemSpawnChance = 0.5
 
 [node name="Bed" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1)
@@ -154,7 +164,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, -1)
 shape = SubResource("BoxShape3D_mem0b")
 
 [node name="Spawner" parent="." instance=ExtResource("11_yjy60")]
+unique_name_in_owner = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ui" parent="CanvasLayer" instance=ExtResource("12_javd3")]
+
+[node name="itemSpawner" type="Node3D" parent="."]
+script = ExtResource("13_lftkk")
+items = Array[PackedScene]([null, ExtResource("14_rymrf"), ExtResource("15_oge77")])
+
+[node name="Timer" type="Timer" parent="itemSpawner"]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="itemSpawner/Timer" to="itemSpawner" method="_on_timer_timeout"]
