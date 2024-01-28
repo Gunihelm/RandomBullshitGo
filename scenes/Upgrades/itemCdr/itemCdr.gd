@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_texture_button_pressed():
-	%Player.itemCdr += 1
+	get_node("/root/Game/Player").itemCdr += 1
 	
 	
 	get_tree().paused = false

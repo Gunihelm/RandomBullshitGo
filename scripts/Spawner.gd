@@ -27,7 +27,7 @@ func on_wave_end():
 	var upgrade = upgrade_menu.instantiate()
 	wave += 1
 	wave_start(wave)
-	add_child(upgrade)
+	get_parent().add_child(upgrade)
 
 func wave_start(wave: int):
 	pass
