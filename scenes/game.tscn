@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://clcqewrfte2cx"]
+[gd_scene load_steps=26 format=3 uid="uid://clcqewrfte2cx"]
 
 [ext_resource type="PackedScene" uid="uid://iqhp16gxd7gn" path="res://scenes/player.tscn" id="1_1x47k"]
 [ext_resource type="Texture2D" uid="uid://ckn7e10fo6tpr" path="res://assets/Background_Main_V1.png" id="2_4rv4p"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://baek1f2lfujd0" path="res://scenes/mochiCat.tscn" id="5_aurug"]
 [ext_resource type="Script" path="res://scripts/onPlatform.gd" id="5_y7y05"]
 [ext_resource type="PackedScene" uid="uid://dpcx3vdkhh474" path="res://scenes/spikey.tscn" id="6_j5i4b"]
-[ext_resource type="PackedScene" path="res://scenes/boomerangGuy.tscn" id="7_5loia"]
-[ext_resource type="PackedScene" path="res://scenes/star.tscn" id="8_8xmoy"]
-[ext_resource type="PackedScene" path="res://scenes/stronkApple.tscn" id="9_braqo"]
-[ext_resource type="PackedScene" uid="uid://dwqnwynjdcg3a" path="res://scenes/spawner.tscn" id="11_yjy60"]
+[ext_resource type="PackedScene" uid="uid://6wuimcva606y" path="res://scenes/boomerangGuy.tscn" id="7_5loia"]
+[ext_resource type="PackedScene" uid="uid://4hi78x52fdc1" path="res://scenes/star.tscn" id="8_8xmoy"]
+[ext_resource type="PackedScene" uid="uid://804w6eilyc5l" path="res://scenes/stronkApple.tscn" id="9_braqo"]
+[ext_resource type="PackedScene" uid="uid://ckhjhdluiqoxw" path="res://scenes/spawner.tscn" id="11_yjy60"]
+[ext_resource type="PackedScene" uid="uid://bc2qun0uofs4f" path="res://scenes/ui.tscn" id="12_javd3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yufhb"]
 size = Vector3(10.3, 1, 6.5)
@@ -157,6 +158,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33464, 1.35803, -1.24626)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20898, 0.745337, 0)
 
 [node name="onPlatform" type="Area3D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("5_y7y05")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="onPlatform"]
@@ -179,3 +181,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576421, -1.9175)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41553, 0.340859, 0.447523)
 
 [node name="Spawner" parent="." instance=ExtResource("11_yjy60")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ui" parent="CanvasLayer" instance=ExtResource("12_javd3")]
