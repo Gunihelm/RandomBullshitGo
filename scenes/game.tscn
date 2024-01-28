@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://baek1f2lfujd0" path="res://scenes/mochiCat.tscn" id="5_aurug"]
 [ext_resource type="Script" path="res://scripts/onPlatform.gd" id="5_y7y05"]
 [ext_resource type="PackedScene" uid="uid://dpcx3vdkhh474" path="res://scenes/spikey.tscn" id="6_j5i4b"]
-[ext_resource type="PackedScene" uid="uid://6wuimcva606y" path="res://scenes/boomerangGuy.tscn" id="7_5loia"]
-[ext_resource type="PackedScene" uid="uid://4hi78x52fdc1" path="res://scenes/star.tscn" id="8_8xmoy"]
-[ext_resource type="PackedScene" uid="uid://804w6eilyc5l" path="res://scenes/stronkApple.tscn" id="9_braqo"]
-[ext_resource type="PackedScene" uid="uid://ckhjhdluiqoxw" path="res://scenes/spawner.tscn" id="11_yjy60"]
-[ext_resource type="PackedScene" uid="uid://bc2qun0uofs4f" path="res://scenes/ui.tscn" id="12_javd3"]
+[ext_resource type="PackedScene" path="res://scenes/boomerangGuy.tscn" id="7_5loia"]
+[ext_resource type="PackedScene" path="res://scenes/star.tscn" id="8_8xmoy"]
+[ext_resource type="PackedScene" path="res://scenes/stronkApple.tscn" id="9_braqo"]
+[ext_resource type="PackedScene" uid="uid://dwqnwynjdcg3a" path="res://scenes/spawner.tscn" id="11_yjy60"]
+[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="12_javd3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yufhb"]
 size = Vector3(10.3, 1, 6.5)
